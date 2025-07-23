@@ -84,34 +84,14 @@ This module provides a complete Real Estate CRM solution including:
         'security/ir.model.access.csv',
         
         # Data
+        'data/sequences.xml',
         'data/property_type_data.xml',
         'data/property_status_data.xml',
-        'data/email_templates.xml',
-        'data/automated_actions.xml',
         
         # Views
+        'views/actions.xml',
         'views/property_views.xml',
-        'views/property_type_views.xml',
-        'views/client_views.xml',
-        'views/lead_views.xml',
-        'views/agent_views.xml',
-        'views/appointment_views.xml',
-        'views/valuation_views.xml',
-        'views/contract_views.xml',
-        'views/commission_views.xml',
-        
-        # Menus
         'views/menu_views.xml',
-        
-        # Reports
-        'report/property_report.xml',
-        'report/client_report.xml',
-        'report/sales_report.xml',
-        
-        # Wizards
-        'wizard/property_search_wizard.xml',
-        'wizard/bulk_email_wizard.xml',
-        'wizard/commission_calculate_wizard.xml',
     ],
     'demo': [
         'data/demo_property_data.xml',

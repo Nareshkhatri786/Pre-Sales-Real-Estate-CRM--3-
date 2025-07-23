@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Residential Property Types -->
+        <record id="property_type_house" model="real.estate.property.type">
+            <field name="name">House</field>
+            <field name="description">Single-family detached house</field>
+            <field name="category">residential</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">3</field>
+            <field name="default_bathrooms">2</field>
+            <field name="sequence">10</field>
+            <field name="color">1</field>
+        </record>
+        
+        <record id="property_type_apartment" model="real.estate.property.type">
+            <field name="name">Apartment</field>
+            <field name="description">Apartment or flat in a building</field>
+            <field name="category">residential</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">2</field>
+            <field name="default_bathrooms">1</field>
+            <field name="sequence">20</field>
+            <field name="color">2</field>
+        </record>
+        
+        <record id="property_type_condo" model="real.estate.property.type">
+            <field name="name">Condominium</field>
+            <field name="description">Condominium unit</field>
+            <field name="category">residential</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">2</field>
+            <field name="default_bathrooms">2</field>
+            <field name="sequence">30</field>
+            <field name="color">3</field>
+        </record>
+        
+        <record id="property_type_townhouse" model="real.estate.property.type">
+            <field name="name">Townhouse</field>
+            <field name="description">Multi-story townhouse or row house</field>
+            <field name="category">residential</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">3</field>
+            <field name="default_bathrooms">2</field>
+            <field name="sequence">40</field>
+            <field name="color">4</field>
+        </record>
+        
+        <record id="property_type_villa" model="real.estate.property.type">
+            <field name="name">Villa</field>
+            <field name="description">Luxury villa or mansion</field>
+            <field name="category">residential</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">4</field>
+            <field name="default_bathrooms">3</field>
+            <field name="sequence">50</field>
+            <field name="color">5</field>
+        </record>
+        
+        <record id="property_type_studio" model="real.estate.property.type">
+            <field name="name">Studio</field>
+            <field name="description">Studio apartment</field>
+            <field name="category">residential</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">1</field>
+            <field name="sequence">60</field>
+            <field name="color">6</field>
+        </record>
+        
+        <!-- Commercial Property Types -->
+        <record id="property_type_office" model="real.estate.property.type">
+            <field name="name">Office</field>
+            <field name="description">Office space or building</field>
+            <field name="category">commercial</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">1</field>
+            <field name="sequence">70</field>
+            <field name="color">7</field>
+        </record>
+        
+        <record id="property_type_retail" model="real.estate.property.type">
+            <field name="name">Retail</field>
+            <field name="description">Retail store or shopping space</field>
+            <field name="category">commercial</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">1</field>
+            <field name="sequence">80</field>
+            <field name="color">8</field>
+        </record>
+        
+        <record id="property_type_warehouse" model="real.estate.property.type">
+            <field name="name">Warehouse</field>
+            <field name="description">Warehouse or storage facility</field>
+            <field name="category">industrial</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">1</field>
+            <field name="sequence">90</field>
+            <field name="color">9</field>
+        </record>
+        
+        <record id="property_type_restaurant" model="real.estate.property.type">
+            <field name="name">Restaurant</field>
+            <field name="description">Restaurant or food service space</field>
+            <field name="category">commercial</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">2</field>
+            <field name="sequence">100</field>
+            <field name="color">10</field>
+        </record>
+        
+        <!-- Land Types -->
+        <record id="property_type_residential_land" model="real.estate.property.type">
+            <field name="name">Residential Land</field>
+            <field name="description">Land zoned for residential development</field>
+            <field name="category">land</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="False"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">0</field>
+            <field name="sequence">110</field>
+            <field name="color">11</field>
+        </record>
+        
+        <record id="property_type_commercial_land" model="real.estate.property.type">
+            <field name="name">Commercial Land</field>
+            <field name="description">Land zoned for commercial development</field>
+            <field name="category">land</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="False"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">0</field>
+            <field name="sequence">120</field>
+            <field name="color">1</field>
+        </record>
+        
+        <record id="property_type_farm" model="real.estate.property.type">
+            <field name="name">Farm/Agricultural</field>
+            <field name="description">Agricultural land or farm property</field>
+            <field name="category">land</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">0</field>
+            <field name="default_bathrooms">0</field>
+            <field name="sequence">130</field>
+            <field name="color">2</field>
+        </record>
+        
+        <!-- Mixed Use -->
+        <record id="property_type_mixed_use" model="real.estate.property.type">
+            <field name="name">Mixed Use</field>
+            <field name="description">Mixed residential and commercial use</field>
+            <field name="category">mixed_use</field>
+            <field name="for_sale" eval="True"/>
+            <field name="for_rent" eval="True"/>
+            <field name="default_bedrooms">2</field>
+            <field name="default_bathrooms">2</field>
+            <field name="sequence">140</field>
+            <field name="color">3</field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        
+        <!-- Security Groups -->
+        <record model="res.groups" id="group_real_estate_user">
+            <field name="name">Real Estate User</field>
+            <field name="category_id" ref="base.module_category_sales_crm"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="comment">Basic real estate access - can view and create leads, appointments</field>
+        </record>
+        
+        <record model="res.groups" id="group_real_estate_agent">
+            <field name="name">Real Estate Agent</field>
+            <field name="category_id" ref="base.module_category_sales_crm"/>
+            <field name="implied_ids" eval="[(4, ref('group_real_estate_user'))]"/>
+            <field name="comment">Real estate agent - can manage properties, clients, appointments</field>
+        </record>
+        
+        <record model="res.groups" id="group_real_estate_manager">
+            <field name="name">Real Estate Manager</field>
+            <field name="category_id" ref="base.module_category_sales_crm"/>
+            <field name="implied_ids" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="comment">Real estate manager - full access to all real estate features</field>
+        </record>
+        
+        <!-- Record Rules -->
+        
+        <!-- Property Rules -->
+        <record model="ir.rule" id="rule_property_agent">
+            <field name="name">Property: Agent Access</field>
+            <field name="model_id" ref="model_real_estate_property"/>
+            <field name="domain_force">['|', ('salesperson_id', '=', user.id), ('salesperson_id', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_property_manager">
+            <field name="name">Property: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_property"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Lead Rules -->
+        <record model="ir.rule" id="rule_lead_agent">
+            <field name="name">Lead: Agent Access</field>
+            <field name="model_id" ref="model_real_estate_lead"/>
+            <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_lead_manager">
+            <field name="name">Lead: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_lead"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Appointment Rules -->
+        <record model="ir.rule" id="rule_appointment_agent">
+            <field name="name">Appointment: Agent Access</field>
+            <field name="model_id" ref="model_real_estate_appointment"/>
+            <field name="domain_force">['|', ('agent_id', '=', user.id), ('agent_id', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_appointment_manager">
+            <field name="name">Appointment: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_appointment"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Commission Rules -->
+        <record model="ir.rule" id="rule_commission_agent">
+            <field name="name">Commission: Agent Own Records</field>
+            <field name="model_id" ref="model_real_estate_commission"/>
+            <field name="domain_force">[('agent_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_commission_manager">
+            <field name="name">Commission: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_commission"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Contract Rules -->
+        <record model="ir.rule" id="rule_contract_agent">
+            <field name="name">Contract: Agent Access</field>
+            <field name="model_id" ref="model_real_estate_contract"/>
+            <field name="domain_force">['|', ('agent_id', '=', user.id), ('agent_id', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_contract_manager">
+            <field name="name">Contract: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_contract"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Valuation Rules -->
+        <record model="ir.rule" id="rule_valuation_agent">
+            <field name="name">Valuation: Agent Access</field>
+            <field name="model_id" ref="model_real_estate_valuation"/>
+            <field name="domain_force">['|', ('valuer_id', '=', user.id), ('valuer_id', '=', False)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_valuation_manager">
+            <field name="name">Valuation: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_valuation"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Agent Rules -->
+        <record model="ir.rule" id="rule_agent_own">
+            <field name="name">Agent: Own Record</field>
+            <field name="model_id" ref="model_real_estate_agent"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_agent'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_agent_manager">
+            <field name="name">Agent: Manager Full Access</field>
+            <field name="model_id" ref="model_real_estate_agent"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_real_estate_manager'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        
+        <!-- Portal Rules for Clients -->
+        <record model="ir.rule" id="rule_property_portal">
+            <field name="name">Property: Portal Client Access</field>
+            <field name="model_id" ref="model_real_estate_property"/>
+            <field name="domain_force">['|', ('buyer_id', '=', user.partner_id.id), ('seller_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_appointment_portal">
+            <field name="name">Appointment: Portal Client Access</field>
+            <field name="model_id" ref="model_real_estate_appointment"/>
+            <field name="domain_force">[('client_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+        <record model="ir.rule" id="rule_lead_portal">
+            <field name="name">Lead: Portal Client Access</field>
+            <field name="model_id" ref="model_real_estate_lead"/>
+            <field name="domain_force">[('partner_id', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        
+    </data>
+</odoo>

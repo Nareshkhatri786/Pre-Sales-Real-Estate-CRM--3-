@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- Main Real Estate Menu -->
+        <menuitem id="menu_real_estate_root" 
+                  name="Real Estate CRM" 
+                  sequence="1" 
+                  web_icon="real_estate_crm,static/description/icon.png"/>
+        
+        <!-- Properties Menu -->
+        <menuitem id="menu_properties" 
+                  name="Properties" 
+                  parent="menu_real_estate_root" 
+                  sequence="1"/>
+        
+        <menuitem id="menu_property_list" 
+                  name="All Properties" 
+                  parent="menu_properties" 
+                  action="action_property" 
+                  sequence="1"/>
+        
+        <menuitem id="menu_property_types" 
+                  name="Property Types" 
+                  parent="menu_properties" 
+                  action="action_property_type" 
+                  sequence="2"/>
+        
+        <!-- Leads & Clients Menu -->
+        <menuitem id="menu_leads_clients" 
+                  name="Leads &amp; Clients" 
+                  parent="menu_real_estate_root" 
+                  sequence="2"/>
+        
+        <menuitem id="menu_leads" 
+                  name="Leads" 
+                  parent="menu_leads_clients" 
+                  action="action_lead" 
+                  sequence="1"/>
+        
+        <menuitem id="menu_clients" 
+                  name="Clients" 
+                  parent="menu_leads_clients" 
+                  action="action_client" 
+                  sequence="2"/>
+        
+        <!-- Appointments Menu -->
+        <menuitem id="menu_appointments" 
+                  name="Appointments" 
+                  parent="menu_real_estate_root" 
+                  action="action_appointment" 
+                  sequence="3"/>
+        
+        <!-- Agents Menu -->
+        <menuitem id="menu_agents" 
+                  name="Agents" 
+                  parent="menu_real_estate_root" 
+                  sequence="4"/>
+        
+        <menuitem id="menu_agent_list" 
+                  name="All Agents" 
+                  parent="menu_agents" 
+                  action="action_agent" 
+                  sequence="1"/>
+        
+        <menuitem id="menu_territories" 
+                  name="Territories" 
+                  parent="menu_agents" 
+                  action="action_territory" 
+                  sequence="2"/>
+        
+        <!-- Sales Menu -->
+        <menuitem id="menu_sales" 
+                  name="Sales" 
+                  parent="menu_real_estate_root" 
+                  sequence="5"/>
+        
+        <menuitem id="menu_valuations" 
+                  name="Valuations" 
+                  parent="menu_sales" 
+                  action="action_valuation" 
+                  sequence="1"/>
+        
+        <menuitem id="menu_contracts" 
+                  name="Contracts" 
+                  parent="menu_sales" 
+                  action="action_contract" 
+                  sequence="2"/>
+        
+        <menuitem id="menu_commissions" 
+                  name="Commissions" 
+                  parent="menu_sales" 
+                  action="action_commission" 
+                  sequence="3"/>
+        
+        <!-- Configuration Menu -->
+        <menuitem id="menu_configuration" 
+                  name="Configuration" 
+                  parent="menu_real_estate_root" 
+                  sequence="99"
+                  groups="group_real_estate_manager"/>
+        
+        <menuitem id="menu_lead_stages" 
+                  name="Lead Stages" 
+                  parent="menu_configuration" 
+                  action="action_lead_stage" 
+                  sequence="1"/>
+        
+        <menuitem id="menu_property_features" 
+                  name="Property Features" 
+                  parent="menu_configuration" 
+                  action="action_property_feature" 
+                  sequence="2"/>
+        
+    </data>
+</odoo>

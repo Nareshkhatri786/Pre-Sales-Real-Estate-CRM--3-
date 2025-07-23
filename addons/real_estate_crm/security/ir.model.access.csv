@@ -1,0 +1,107 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+# Property access
+access_property_user,real.estate.property user,model_real_estate_property,group_real_estate_user,1,0,0,0
+access_property_agent,real.estate.property agent,model_real_estate_property,group_real_estate_agent,1,1,1,0
+access_property_manager,real.estate.property manager,model_real_estate_property,group_real_estate_manager,1,1,1,1
+access_property_portal,real.estate.property portal,model_real_estate_property,base.group_portal,1,0,0,0
+access_property_public,real.estate.property public,model_real_estate_property,base.group_public,1,0,0,0
+
+# Property Type access
+access_property_type_user,real.estate.property.type user,model_real_estate_property_type,group_real_estate_user,1,0,0,0
+access_property_type_agent,real.estate.property.type agent,model_real_estate_property_type,group_real_estate_agent,1,1,1,0
+access_property_type_manager,real.estate.property.type manager,model_real_estate_property_type,group_real_estate_manager,1,1,1,1
+access_property_type_portal,real.estate.property.type portal,model_real_estate_property_type,base.group_portal,1,0,0,0
+access_property_type_public,real.estate.property.type public,model_real_estate_property_type,base.group_public,1,0,0,0
+
+# Property Offer access
+access_property_offer_user,real.estate.property.offer user,model_real_estate_property_offer,group_real_estate_user,1,0,0,0
+access_property_offer_agent,real.estate.property.offer agent,model_real_estate_property_offer,group_real_estate_agent,1,1,1,0
+access_property_offer_manager,real.estate.property.offer manager,model_real_estate_property_offer,group_real_estate_manager,1,1,1,1
+
+# Property Images access
+access_property_image_user,real.estate.property.image user,model_real_estate_property_image,group_real_estate_user,1,0,0,0
+access_property_image_agent,real.estate.property.image agent,model_real_estate_property_image,group_real_estate_agent,1,1,1,1
+access_property_image_manager,real.estate.property.image manager,model_real_estate_property_image,group_real_estate_manager,1,1,1,1
+access_property_image_portal,real.estate.property.image portal,model_real_estate_property_image,base.group_portal,1,0,0,0
+access_property_image_public,real.estate.property.image public,model_real_estate_property_image,base.group_public,1,0,0,0
+
+# Property Documents access
+access_property_document_user,real.estate.property.document user,model_real_estate_property_document,group_real_estate_user,1,0,0,0
+access_property_document_agent,real.estate.property.document agent,model_real_estate_property_document,group_real_estate_agent,1,1,1,1
+access_property_document_manager,real.estate.property.document manager,model_real_estate_property_document,group_real_estate_manager,1,1,1,1
+
+# Property Features access
+access_property_feature_user,real.estate.property.feature user,model_real_estate_property_feature,group_real_estate_user,1,0,0,0
+access_property_feature_agent,real.estate.property.feature agent,model_real_estate_property_feature,group_real_estate_agent,1,1,1,0
+access_property_feature_manager,real.estate.property.feature manager,model_real_estate_property_feature,group_real_estate_manager,1,1,1,1
+access_property_feature_portal,real.estate.property.feature portal,model_real_estate_property_feature,base.group_portal,1,0,0,0
+access_property_feature_public,real.estate.property.feature public,model_real_estate_property_feature,base.group_public,1,0,0,0
+
+# Lead access
+access_lead_user,real.estate.lead user,model_real_estate_lead,group_real_estate_user,1,0,1,0
+access_lead_agent,real.estate.lead agent,model_real_estate_lead,group_real_estate_agent,1,1,1,0
+access_lead_manager,real.estate.lead manager,model_real_estate_lead,group_real_estate_manager,1,1,1,1
+access_lead_portal,real.estate.lead portal,model_real_estate_lead,base.group_portal,1,0,0,0
+
+# Lead Stage access
+access_lead_stage_user,real.estate.lead.stage user,model_real_estate_lead_stage,group_real_estate_user,1,0,0,0
+access_lead_stage_agent,real.estate.lead.stage agent,model_real_estate_lead_stage,group_real_estate_agent,1,1,1,0
+access_lead_stage_manager,real.estate.lead.stage manager,model_real_estate_lead_stage,group_real_estate_manager,1,1,1,1
+
+# Agent access
+access_agent_user,real.estate.agent user,model_real_estate_agent,group_real_estate_user,1,0,0,0
+access_agent_agent,real.estate.agent agent,model_real_estate_agent,group_real_estate_agent,1,1,0,0
+access_agent_manager,real.estate.agent manager,model_real_estate_agent,group_real_estate_manager,1,1,1,1
+access_agent_portal,real.estate.agent portal,model_real_estate_agent,base.group_portal,1,0,0,0
+access_agent_public,real.estate.agent public,model_real_estate_agent,base.group_public,1,0,0,0
+
+# Territory access
+access_territory_user,real.estate.territory user,model_real_estate_territory,group_real_estate_user,1,0,0,0
+access_territory_agent,real.estate.territory agent,model_real_estate_territory,group_real_estate_agent,1,0,0,0
+access_territory_manager,real.estate.territory manager,model_real_estate_territory,group_real_estate_manager,1,1,1,1
+
+# Appointment access
+access_appointment_user,real.estate.appointment user,model_real_estate_appointment,group_real_estate_user,1,0,1,0
+access_appointment_agent,real.estate.appointment agent,model_real_estate_appointment,group_real_estate_agent,1,1,1,0
+access_appointment_manager,real.estate.appointment manager,model_real_estate_appointment,group_real_estate_manager,1,1,1,1
+access_appointment_portal,real.estate.appointment portal,model_real_estate_appointment,base.group_portal,1,0,0,0
+
+# Valuation access
+access_valuation_user,real.estate.valuation user,model_real_estate_valuation,group_real_estate_user,1,0,0,0
+access_valuation_agent,real.estate.valuation agent,model_real_estate_valuation,group_real_estate_agent,1,1,1,0
+access_valuation_manager,real.estate.valuation manager,model_real_estate_valuation,group_real_estate_manager,1,1,1,1
+
+# Valuation Comparable access
+access_valuation_comparable_user,real.estate.valuation.comparable user,model_real_estate_valuation_comparable,group_real_estate_user,1,0,0,0
+access_valuation_comparable_agent,real.estate.valuation.comparable agent,model_real_estate_valuation_comparable,group_real_estate_agent,1,1,1,1
+access_valuation_comparable_manager,real.estate.valuation.comparable manager,model_real_estate_valuation_comparable,group_real_estate_manager,1,1,1,1
+
+# Contract access
+access_contract_user,real.estate.contract user,model_real_estate_contract,group_real_estate_user,1,0,0,0
+access_contract_agent,real.estate.contract agent,model_real_estate_contract,group_real_estate_agent,1,1,1,0
+access_contract_manager,real.estate.contract manager,model_real_estate_contract,group_real_estate_manager,1,1,1,1
+
+# Contract Milestone access
+access_contract_milestone_user,real.estate.contract.milestone user,model_real_estate_contract_milestone,group_real_estate_user,1,0,0,0
+access_contract_milestone_agent,real.estate.contract.milestone agent,model_real_estate_contract_milestone,group_real_estate_agent,1,1,1,0
+access_contract_milestone_manager,real.estate.contract.milestone manager,model_real_estate_contract_milestone,group_real_estate_manager,1,1,1,1
+
+# Commission access
+access_commission_user,real.estate.commission user,model_real_estate_commission,group_real_estate_user,1,0,0,0
+access_commission_agent,real.estate.commission agent,model_real_estate_commission,group_real_estate_agent,1,0,0,0
+access_commission_manager,real.estate.commission manager,model_real_estate_commission,group_real_estate_manager,1,1,1,1
+
+# Commission Deduction access
+access_commission_deduction_user,real.estate.commission.deduction user,model_real_estate_commission_deduction,group_real_estate_user,1,0,0,0
+access_commission_deduction_agent,real.estate.commission.deduction agent,model_real_estate_commission_deduction,group_real_estate_agent,1,0,0,0
+access_commission_deduction_manager,real.estate.commission.deduction manager,model_real_estate_commission_deduction,group_real_estate_manager,1,1,1,1
+
+# Commission Split access
+access_commission_split_user,real.estate.commission.split user,model_real_estate_commission_split,group_real_estate_user,1,0,0,0
+access_commission_split_agent,real.estate.commission.split agent,model_real_estate_commission_split,group_real_estate_agent,1,0,0,0
+access_commission_split_manager,real.estate.commission.split manager,model_real_estate_commission_split,group_real_estate_manager,1,1,1,1
+
+# Partner access (inherited)
+access_partner_agent,res.partner agent,base.model_res_partner,group_real_estate_agent,1,1,1,0
+access_partner_manager,res.partner manager,base.model_res_partner,group_real_estate_manager,1,1,1,0

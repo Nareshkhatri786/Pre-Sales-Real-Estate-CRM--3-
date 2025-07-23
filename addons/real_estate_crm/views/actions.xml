@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- Property Type Actions -->
+        <record id="action_property_type" model="ir.actions.act_window">
+            <field name="name">Property Types</field>
+            <field name="res_model">real.estate.property.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Lead Actions -->
+        <record id="action_lead" model="ir.actions.act_window">
+            <field name="name">Leads</field>
+            <field name="res_model">real.estate.lead</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+        
+        <!-- Client Actions -->
+        <record id="action_client" model="ir.actions.act_window">
+            <field name="name">Clients</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('is_real_estate_client', '=', True)]</field>
+            <field name="context">{'default_is_real_estate_client': True}</field>
+        </record>
+        
+        <!-- Appointment Actions -->
+        <record id="action_appointment" model="ir.actions.act_window">
+            <field name="name">Appointments</field>
+            <field name="res_model">real.estate.appointment</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+        
+        <!-- Agent Actions -->
+        <record id="action_agent" model="ir.actions.act_window">
+            <field name="name">Agents</field>
+            <field name="res_model">real.estate.agent</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Territory Actions -->
+        <record id="action_territory" model="ir.actions.act_window">
+            <field name="name">Territories</field>
+            <field name="res_model">real.estate.territory</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Valuation Actions -->
+        <record id="action_valuation" model="ir.actions.act_window">
+            <field name="name">Valuations</field>
+            <field name="res_model">real.estate.valuation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Contract Actions -->
+        <record id="action_contract" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">real.estate.contract</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Commission Actions -->
+        <record id="action_commission" model="ir.actions.act_window">
+            <field name="name">Commissions</field>
+            <field name="res_model">real.estate.commission</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Lead Stage Actions -->
+        <record id="action_lead_stage" model="ir.actions.act_window">
+            <field name="name">Lead Stages</field>
+            <field name="res_model">real.estate.lead.stage</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Property Feature Actions -->
+        <record id="action_property_feature" model="ir.actions.act_window">
+            <field name="name">Property Features</field>
+            <field name="res_model">real.estate.property.feature</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</odoo>
